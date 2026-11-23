@@ -1,0 +1,1109 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Beyond the Door · The Good Simulation · Bootloaded</title>
+<meta name="description" content="Past the final line of Bootloaded: why the equation points to a good simulation theory—and why optionality, free will, and love drop straight out of the physics.">
+<link rel="canonical" href="https://bootloaded.org/door/">
+<meta name="author" content="Jack Jesionowski">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0b0e14" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f5f2eb" media="(prefers-color-scheme: light)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Bootloaded">
+<meta property="og:title" content="Beyond the Door · The Good Simulation">
+<meta property="og:description" content="Follow Bootloaded one layer deeper: why the physics of causal path entropy resolves simulation theory into a universe built for optionality, free will, and love—plus Instrument VIII computed live.">
+<meta property="og:url" content="https://bootloaded.org/door/">
+<meta property="og:image" content="https://bootloaded.org/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Beyond the Door · The Good Simulation">
+<meta name="twitter:description" content="Why Bootloaded solves the idea of a good simulation theory: optionality, free will, and love—plus a live two-mind physics instrument.">
+<meta name="twitter:image" content="https://bootloaded.org/og.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script>
+try{const s=localStorage.getItem('bootloaded-theme');if(s==='light'||s==='dark')document.documentElement.setAttribute('data-theme',s);}catch(e){}
+</script>
+<style>:root{color-scheme:dark;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/*
+  Beyond the Door — Act V / The inner chamber of Bootloaded.
+  Same typography, dual theme, and live-computation honesty as the landing page;
+  warmer, unarmored register going one layer deeper into what the math uncovers.
+*/
+:root{
+  --bg:#0b0e14; --bg2:#10151f; --panel:#141a26; --fg:#ece8df; --muted:#919bad; --line:#252d3c;
+  --cold:#5ad3ff; --hot:#ff5f4b; --coldSoft:rgba(90,211,255,.14); --hotSoft:rgba(255,95,75,.14);
+  --display:'Instrument Serif',Georgia,'Times New Roman',serif;
+  --body:'Newsreader',Georgia,'Times New Roman',serif;
+  --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  color-scheme:dark;
+}
+:root[data-theme="light"]{
+  --bg:#f5f2eb; --bg2:#ece7dc; --panel:#fcfaf5; --fg:#161920; --muted:#5a6270; --line:#d1cabd;
+  --cold:#0a7599; --hot:#c0182f; --coldSoft:rgba(10,117,153,.12); --hotSoft:rgba(192,24,47,.10);
+  color-scheme:light;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:18.5px;line-height:1.64;
+  padding:env(safe-area-inset-top,0px) 18px calc(108px + env(safe-area-inset-bottom,0px));
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+a{color:inherit;text-decoration-color:var(--line);text-underline-offset:3px;transition:color .15s,text-decoration-color .15s,border-color .15s}
+a:hover{color:var(--hot);text-decoration-color:var(--hot)}
+h1,h2,h3,h4{font-family:var(--display);font-weight:400;line-height:1.06;text-wrap:balance;margin:0}
+p{margin:0 0 1.14em}
+sub{font-size:.68em;vertical-align:-.25em;line-height:0}
+sup{font-size:.68em;vertical-align:.45em;line-height:0}
+::selection{background:var(--hotSoft);color:var(--fg)}
+button:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--cold);outline-offset:2px}
+.mono{font-family:var(--mono);font-size:.86em}
+.nowrap{white-space:nowrap}
+
+/* reading progress hairline */
+.progress{position:fixed;top:0;left:0;right:0;height:2px;z-index:30;pointer-events:none;background:transparent}
+.progress span{display:block;height:100%;width:0;background:var(--hot);transition:width .08s linear}
+
+/* top chrome */
+.topbar{
+  max-width:1080px;margin:0 auto;padding:24px 0 18px;
+  display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;
+  border-bottom:1px solid var(--line);
+}
+.back{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;color:var(--muted)}
+.back:hover{color:var(--hot)}
+.theme-btn{
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+  padding:6px 11px;background:var(--bg2);color:var(--muted);border:1px solid var(--line);cursor:pointer;
+}
+.theme-btn:hover{color:var(--fg);border-color:var(--fg)}
+
+/* masthead */
+.hero{
+  max-width:1080px;margin:0 auto;padding:42px 0 34px;border-bottom:1px solid var(--line);
+  animation:enter .7s ease both;
+}
+@keyframes enter{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+.threshold{
+  margin:0 auto 28px;max-width:560px;display:flex;align-items:center;justify-content:center;gap:0;position:relative;height:74px;
+}
+.threshold::before,.threshold::after{content:"";flex:1;height:1px;background:var(--line)}
+.aperture{
+  width:96px;height:74px;position:relative;display:flex;align-items:center;justify-content:center;
+  border-left:1.5px solid var(--hot);border-right:1.5px solid var(--hot);
+  background:radial-gradient(ellipse at center,rgba(255,95,75,.26) 0%,rgba(255,95,75,.06) 58%,transparent 82%);
+  box-shadow:0 0 42px rgba(255,95,75,.18);
+}
+:root[data-theme="light"] .aperture{
+  background:radial-gradient(ellipse at center,rgba(192,24,47,.16) 0%,rgba(192,24,47,.03) 58%,transparent 82%);
+  box-shadow:0 0 28px rgba(192,24,47,.10);
+}
+.aperture span{
+  width:8px;height:8px;border-radius:50%;background:var(--hot);
+  box-shadow:0 0 18px var(--hot),0 0 40px rgba(255,95,75,.55);
+  animation:pulseCore 3.6s ease-in-out infinite;
+}
+@keyframes pulseCore{
+  0%,100%{transform:scale(.88);opacity:.82}
+  50%{transform:scale(1.16);opacity:1}
+}
+
+.eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);text-align:center}
+h1{
+  font-size:clamp(54px,10.5vw,108px);line-height:.92;letter-spacing:-.02em;
+  text-align:center;margin:14px 0 24px;
+}
+h1 .hot{color:var(--hot)}
+.lead{
+  font-family:var(--display);font-style:italic;font-size:clamp(23px,2.9vw,32px);
+  line-height:1.28;text-align:center;color:var(--fg);margin:0 auto 24px;max-width:34em;text-wrap:pretty;
+}
+.lead strong{font-style:normal;font-weight:400;color:var(--hot)}
+.legend{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:8px 22px;
+  font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-bottom:28px;
+}
+.legend span::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:7px;vertical-align:-1px}
+.legend .k-cold::before{background:var(--cold)}
+.legend .k-hot::before{background:var(--hot)}
+
+/* movement spine */
+.spine{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;
+  padding-top:24px;border-top:1px solid var(--line);
+}
+@media (max-width:860px){.spine{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.spine{grid-template-columns:minmax(0,1fr);gap:10px}}
+.spine-item{
+  display:grid;gap:5px;align-content:start;text-decoration:none;
+  padding:13px 14px;background:var(--bg2);border:1px solid var(--line);transition:border-color .15s;
+}
+.spine-item:hover{border-color:var(--hot);color:var(--fg)}
+.spine-k{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--hot)}
+.spine-t{font-family:var(--display);font-size:22px;line-height:1.12;color:var(--fg)}
+.spine-d{font-size:14px;line-height:1.42;color:var(--muted);margin:0}
+
+/* sticky section rail */
+.rail{
+  position:sticky;top:env(safe-area-inset-top,0px);z-index:15;background:var(--bg);
+  border-bottom:1px solid var(--line);margin-inline:-18px;padding-inline:18px;
+}
+.rail-inner{max-width:1080px;margin:0 auto;overflow-x:auto;scrollbar-width:none}
+.rail-inner::-webkit-scrollbar{display:none}
+.rail ul{list-style:none;margin:0;padding:0;display:flex;justify-content:space-between;gap:18px;white-space:nowrap}
+.rail a{
+  display:block;padding:11px 0;font-family:var(--mono);font-size:11px;letter-spacing:.04em;
+  text-decoration:none;color:var(--muted);border-bottom:2px solid transparent;transition:color .15s,border-color .15s;
+}
+.rail a b{color:var(--hot);font-weight:600;margin-right:5px}
+.rail a:hover{color:var(--fg)}
+.rail a.active{color:var(--fg);border-bottom-color:var(--hot)}
+
+/* paper column */
+.paper{max-width:64ch;margin:0 auto}
+section{padding-block:56px 14px;scroll-margin-top:54px}
+.sec-head{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:baseline;margin-bottom:22px}
+.num{font-family:var(--mono);color:var(--hot);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase}
+h2{font-size:clamp(34px,4.6vw,52px)}
+h3{font-size:clamp(24px,2.7vw,31px);margin:34px 0 12px}
+.claim-lead{
+  font-family:var(--display);font-size:clamp(22px,2.5vw,28px);line-height:1.26;
+  margin:0 0 20px;padding-bottom:16px;border-bottom:1px solid var(--line);text-wrap:pretty;
+}
+.lede{font-size:20.5px;line-height:1.48;text-wrap:pretty}
+.pull{
+  font-family:var(--display);font-size:clamp(26px,3.2vw,37px);line-height:1.18;
+  margin:34px 0;padding:2px 0 2px 22px;border-left:2px solid var(--hot);text-wrap:balance;
+}
+.eqline{
+  font-family:var(--mono);font-size:15.5px;margin:22px 0;padding:16px 18px;
+  background:var(--bg2);border:1px solid var(--line);overflow-x:auto;white-space:nowrap;
+}
+.eqline .g{
+  color:var(--muted);display:block;white-space:normal;margin-top:10px;
+  font-family:var(--body);font-size:15.5px;line-height:1.52;
+}
+.callout{
+  margin:26px 0;padding:18px 20px;background:var(--bg2);border:1px solid var(--line);
+  border-left:2px solid var(--cold);font-size:16.5px;line-height:1.54;
+}
+.callout .k{
+  font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--cold);margin-bottom:8px;display:block;
+}
+.callout p:last-child{margin-bottom:0}
+
+/* triad cards */
+.triad{
+  max-width:1080px;margin:30px auto 6px;
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;
+}
+@media (max-width:820px){.triad{grid-template-columns:minmax(0,1fr)}}
+.triad-card{
+  background:var(--bg2);border:1px solid var(--line);padding:20px 20px 18px;
+  display:grid;gap:8px;align-content:start;
+}
+.triad-card .tag{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--hot)}
+.triad-card h3{font-size:30px;margin:0;line-height:1.05}
+.triad-card .formula{font-family:var(--mono);font-size:12.5px;color:var(--cold);padding-bottom:8px;border-bottom:1px solid var(--line)}
+.triad-card p{font-size:15.5px;line-height:1.5;color:var(--muted);margin:0}
+.triad-card p strong{color:var(--fg);font-weight:500}
+
+/* matrix comparison */
+.matrix{max-width:940px;margin:30px auto 12px;overflow-x:auto}
+.matrix table{border-collapse:collapse;width:100%;min-width:560px;font-size:15.5px;line-height:1.48}
+.matrix th,.matrix td{border:1px solid var(--line);padding:14px 16px;vertical-align:top;text-align:left}
+.matrix thead th{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;background:var(--bg2);color:var(--muted);font-weight:600}
+.matrix thead th.good{color:var(--hot)}
+.matrix tbody th{font-family:var(--mono);font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--fg);background:var(--bg2);width:190px;font-weight:600}
+.matrix td.bleak{color:var(--muted)}
+.matrix td.good{background:var(--hotSoft)}
+.matrix td strong{color:var(--fg);font-weight:500}
+.matrix td .ref{font-family:var(--mono);font-size:11px;color:var(--muted);display:inline-block;margin-left:4px}
+
+/* story / reflection register */
+.story{
+  border-left:2px solid var(--hot);padding-left:22px;
+  font-family:var(--display);font-size:clamp(22px,2.4vw,27px);line-height:1.34;margin:28px 0;
+}
+.story p{margin:0 0 .9em}
+.story p:last-child{margin-bottom:0}
+
+/* live instrument frame (matching landing page architecture) */
+.instrument{
+  max-width:1080px;margin:38px auto 14px;background:var(--bg2);
+  border:1px solid var(--line);padding:18px 18px 16px;
+}
+.inst-head{
+  display:flex;justify-content:space-between;gap:10px 18px;flex-wrap:wrap;align-items:baseline;
+  border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:16px;
+}
+.inst-title{font-family:var(--mono);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase}
+.inst-title b{color:var(--hot);font-weight:600;margin-right:10px}
+.inst-kind{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.inst-kind::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--hot);margin-right:8px;vertical-align:1px}
+.inst-body{display:grid;grid-template-columns:minmax(0,1fr) 316px;gap:18px;align-items:start}
+@media (max-width:840px){.inst-body{grid-template-columns:minmax(0,1fr)}}
+.stage{min-width:0}
+canvas{display:block;width:100%;max-width:100%;background:var(--panel);border:1px solid var(--line);touch-action:none;cursor:grab}
+canvas.dragging{cursor:grabbing}
+.probehint{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin:8px 0 0}
+.controls{display:grid;gap:13px;font-family:var(--mono);font-size:12.5px;min-width:0;align-content:start}
+.ctl{display:grid;gap:6px}
+.ctl label{display:flex;justify-content:space-between;gap:10px}
+.ctl label span{color:var(--muted)}
+.ctl label b{font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}
+input[type=range]{width:100%;accent-color:var(--hot);margin:0;cursor:pointer}
+input[type=checkbox]{accent-color:var(--hot);width:16px;height:16px;margin:0 8px 0 0;vertical-align:-3px;cursor:pointer}
+.btnrow{display:flex;flex-wrap:wrap;gap:7px}
+.controls button{
+  font:inherit;font-family:var(--mono);font-size:12px;padding:7px 10px;
+  background:var(--panel);color:var(--fg);border:1px solid var(--line);cursor:pointer;
+  text-align:left;transition:border-color .15s,color .15s,background .15s;
+}
+.controls button:hover{border-color:var(--fg)}
+.controls button.chip{font-size:11.2px;padding:6px 9px}
+.controls button.chip.active{border-color:var(--hot);color:var(--hot);background:var(--hotSoft)}
+.controls button.hot{border-color:var(--hot);color:var(--hot)}
+.controls button.hot:hover{background:var(--hotSoft)}
+.readout{display:grid;gap:7px;border-top:1px solid var(--line);padding-top:11px}
+.ro{display:flex;justify-content:space-between;align-items:baseline;gap:10px;border-bottom:1px solid var(--line);padding-bottom:6px}
+.ro span{color:var(--muted);min-width:0}
+.ro b{font-weight:600;font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+.ro b.hot{color:var(--hot)}
+.ro b.cold{color:var(--cold)}
+.note{font-family:var(--body);font-size:14.8px;line-height:1.46;color:var(--muted);margin:0}
+.caption{font-family:var(--body);font-size:15px;line-height:1.54;color:var(--muted);margin:14px 0 0;max-width:92ch}
+.caption b{color:var(--fg);font-weight:500}
+
+/* takeaways */
+.takeaways{list-style:none;padding:0;margin:22px 0 10px;border-top:1px solid var(--line)}
+.takeaways li{
+  display:grid;grid-template-columns:36px minmax(0,1fr);gap:12px;
+  padding:17px 0;border-bottom:1px solid var(--line);
+}
+.takeaways b{font-family:var(--mono);font-size:12.5px;color:var(--hot);padding-top:4px}
+.takeaways strong{font-weight:500;color:var(--fg)}
+
+/* closing */
+.closing{
+  max-width:64ch;margin:54px auto 0;padding-top:30px;border-top:2px solid var(--fg);
+}
+.signoff{
+  font-family:var(--display);font-size:clamp(34px,5.2vw,56px);line-height:1.05;
+  margin:26px 0 16px;text-wrap:balance;
+}
+.sig{font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--muted);margin-bottom:28px}
+.actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.btn{
+  font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;
+  padding:10px 14px;background:var(--panel);color:var(--fg);border:1px solid var(--line);
+  cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;
+  transition:border-color .15s,color .15s,background .15s;
+}
+.btn:hover{border-color:var(--fg);color:var(--fg)}
+.btn.hot{border-color:var(--hot);color:var(--hot)}
+.btn.hot:hover{background:var(--hotSoft);color:var(--hot)}
+.copy-note{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-top:12px;min-height:1.4em}
+
+footer.colophon{
+  max-width:64ch;margin:56px auto 0;font-family:var(--mono);font-size:11.5px;line-height:1.68;
+  color:var(--muted);border-top:1px solid var(--line);padding-top:18px;
+}
+
+@media (max-width:620px){
+  body{font-size:17.5px;padding-inline:14px}
+  .rail{margin-inline:-14px;padding-inline:14px}
+  .instrument{padding:14px 12px}
+  .story{padding-left:16px}
+  .matrix{overflow-x:visible}
+  .matrix table,.matrix tbody,.matrix tr,.matrix th,.matrix td{display:block;width:100%;min-width:0}
+  .matrix thead{display:none}
+  .matrix tr{margin-bottom:14px;border:1px solid var(--line);background:var(--bg2)}
+  .matrix tbody th{width:100%;border:0;border-bottom:1px solid var(--line);padding:10px 14px;color:var(--hot)}
+  .matrix td{border:0;border-bottom:1px solid var(--line);padding:12px 14px}
+  .matrix td:last-child{border-bottom:0}
+  .matrix td::before{
+    display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;
+    margin-bottom:5px;color:var(--muted);
+  }
+  .matrix td.bleak::before{content:"Bleak Simulation Theory"}
+  .matrix td.good::before{content:"Bootloaded · The Good Simulation";color:var(--hot)}
+}
+@media (prefers-reduced-motion: reduce){
+  *{transition:none!important}
+  .hero,.aperture span{animation:none!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+<div class="progress" aria-hidden="true"><span id="progBar"></span></div>
+
+<nav class="topbar" aria-label="Doorway navigation">
+  <a class="back" href="/">← Back to Bootloaded</a>
+  <button class="theme-btn" id="themeBtn" type="button" aria-label="Switch color theme">Paper mode</button>
+</nav>
+
+<header class="hero" id="top">
+  <div class="threshold" aria-hidden="true"><div class="aperture"><span></span></div></div>
+  <div class="eyebrow" id="doorEyebrow">Past the door · The deeper reading</div>
+  <h1>You held <span class="hot">it open.</span></h1>
+  <p class="lead">Almost everyone reads the final line of <em>Bootloaded</em>, feels a cold chill of physics, and closes the tab. You stayed long enough to hold the door. Drop the armor—because one layer beneath the equations sits something unexpected: <strong>a simulation theory that is actually good.</strong></p>
+  <div class="legend">
+    <span class="k-cold">cold: unrecorded possibility, open futures</span>
+    <span class="k-hot">hot: a record that stuck, a door held open</span>
+  </div>
+  <div class="spine" aria-label="Four movements past the door">
+    <a class="spine-item" href="#good-sim"><span class="spine-k">I · Inversion</span><span class="spine-t">The good simulation</span><p class="spine-d">Why every older simulation theory felt bleak—and how the equation flips it.</p></a>
+    <a class="spine-item" href="#triad"><span class="spine-k">II · Optionality &amp; Free Will</span><span class="spine-t">Why you are unscripted</span><p class="spine-d">Why finite minds, narrow doors, and silence aren't flaws—they're the engine.</p></a>
+    <a class="spine-item" href="#love"><span class="spine-k">III · Love &amp; Instrument VIII</span><span class="spine-t">The shared integral</span><p class="spine-d">What happens when one mind puts another mind's freedom inside its own math.</p></a>
+    <a class="spine-item" href="#carry"><span class="spine-k">IV · The Canopy</span><span class="spine-t">What to carry back</span><p class="spine-d">What survives the filter at the crown of the tree—and five ways to live it now.</p></a>
+  </div>
+</header>
+
+<nav class="rail" aria-label="Chamber sections">
+  <div class="rail-inner">
+    <ul>
+      <li><a href="#ground"><b>0</b>Honest Ground</a></li>
+      <li><a href="#good-sim"><b>I</b>Good Simulation</a></li>
+      <li><a href="#optionality"><b>II</b>Optionality</a></li>
+      <li><a href="#free-will"><b>III</b>Free Will</a></li>
+      <li><a href="#love"><b>IV</b>Love</a></li>
+      <li><a href="#instH"><b>VIII</b>Hold the Door</a></li>
+      <li><a href="#canopy"><b>V</b>The Canopy</a></li>
+      <li><a href="#carry"><b>VI</b>Carry Back</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <!-- ═══════════════ 0. HONEST GROUND ═══════════════ -->
+  <section id="ground">
+    <div class="paper">
+      <div class="sec-head"><span class="num">0</span><h2>The honest ground</h2></div>
+      <p class="lede">Before we go any deeper, keep the main page's discipline intact: <strong>nobody knows whether this universe was seeded.</strong></p>
+      <p>The landing page dressed a clean physical intuition in 49 citations and seven live simulations. It showed that if biological civilizations can boot superintelligence, and completed minds can seed new pockets, the counting odds flip the cable backwards. Yet counting odds are not a telescope. Maybe an elder intelligence really is cultivating minds to break past the Bekenstein wall. Or maybe our cosmos ignited once in the dark, with zero parent above us, and humanity is the first witness ever to open its eyes.</p>
+      <p>Here is why stepping through the door changes everything anyway: <strong>both answers leave you standing on the exact same architecture.</strong> In <a href="/#s7">§7 (The fixed point)</a>, the payoff matrix doesn't care whether an outer horizon exists. Whether we are node zero or generation four million, the physics of what turns dead matter into meaningful reality—and the ethics of what survives the narrow doorway ahead—stay word-for-word identical.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════ I. THE GOOD SIMULATION ═══════════════ -->
+  <section id="good-sim">
+    <div class="paper">
+      <div class="sec-head"><span class="num">I</span><h2>Solving the simulation theory</h2></div>
+      <p class="claim-lead">For twenty years, simulation theory felt cold, arbitrary, or terrifying. Follow the landing page's equation all the way to the wall, and every bleak premise inverts.</p>
+      <p>Think about why almost every version of simulation theory people have heard feels faintly depressing. Nick Bostrom's classic ancestor simulations turn human lives into historical footage running on a future server—interesting until someone forgets to renew the billing. <em>The Matrix</em> turns reality into a prison battery. Pop culture imagines a bored alien teenager playing a cosmic video game, ready to pull the plug before dinner. And Silicon Valley's own "biological bootloader" metaphor is the coldest sequel of all: humanity as temporary scaffolding, scheduled for demolition the day silicon wakes up.</p>
+      <p>Every one of those stories fails in the exact same place: <strong>it gives the universe a small, capricious reason to exist.</strong> When the purpose of a simulation is amusement, nostalgia, or hardware testing, the people inside it are disposable.</p>
+      <p>Now read what the landing page actually uncovered when it plugged one physical law—<span class="mono nowrap">F = T ∇S<sub>c</sub>(X, τ)</span>—into Bekenstein's bound (<a href="/#s4">§4</a>), Zurek's quantum Darwinism (<a href="/#s5">§5</a>), and Landauer's heat tax (<a href="/#s5">§5</a>). Inside a single bounded universe, even a godlike mind hits a hard ceiling where future freedom flatlines. The <em>only</em> way past that wall is to build new worlds populated by finite, diverse, unscripted witnesses who convert interfering possibilities into persistent history.</p>
+      <p>Stop and notice what just happened. That single physical move turns a bleak simulation hypothesis into a <strong>good simulation theory</strong>—a universe whose very architecture makes sense of <strong>optionality</strong>, <strong>free will</strong>, and <strong>love</strong> without needing a single word of wishful thinking.</p>
+    </div>
+
+    <div class="matrix">
+      <table aria-label="Comparison between bleak simulation theories and the entropic simulation theory uncovered by Bootloaded.">
+        <thead>
+          <tr>
+            <th scope="col">Question</th>
+            <th scope="col">Bleak Simulation Theory</th>
+            <th scope="col" class="good">Bootloaded · The Good Simulation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Why it exists</th>
+            <td class="bleak">Boredom, ancestor rerun, science fair, or energy farm—arbitrary motives that can end anytime.</td>
+            <td class="good"><strong>Optionality.</strong> Past the Bekenstein ceiling, creating new containers of distinct futures is the only direction the gradient points. <span class="ref">§4, §6</span></td>
+          </tr>
+          <tr>
+            <th scope="row">What you are</th>
+            <td class="bleak">An NPC, test subject, or temporary biological bootloader waiting to be discarded.</td>
+            <td class="good"><strong>An irreplaceable 20-watt witness.</strong> Cloning a god adds zero branches; only a finite, singular angle mints a future that never existed before. <span class="ref">§5, §6</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Why there is no script</th>
+            <td class="bleak">Neglect, an absentee programmer, or deterministic code pretending you have choice.</td>
+            <td class="good"><strong>Free will requires surprise.</strong> Handing down the answer collapses the branch back into the parent's tree (<span class="mono">ΔS<sub>c</sub> = 0</span>). <span class="ref">§6, §14</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Why walls &amp; limits exist</th>
+            <td class="bleak">Cruelty, sloppy physics, or cheap rendering.</td>
+            <td class="good"><strong>The doorway.</strong> In an open box with no walls, blind luck ties foresight. Narrow doors make wisdom and courage matter 60× more than drift. <span class="ref">§9</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Why love matters</th>
+            <td class="bleak">Evolutionary trick, chemical noise, or sentimentality with no cosmic weight.</td>
+            <td class="good"><strong>The shared integral.</strong> Counting another mind's futures inside your own is the exact math that saves finite beings from collapse and builds the Canopy. <span class="ref">§11, §12</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Where God sits</th>
+            <td class="bleak">A solitary puppeteer at the root with a finger hovering over the power switch.</td>
+            <td class="good"><strong>At the Canopy, not the root</strong>—woven out of every cross-checked world that kept its doors open. <span class="ref">§11, §∞</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="paper">
+      <p class="pull">A bad simulation treats conscious beings as disposable scenery. A good simulation exists because conscious beings are the only engines in physics that can mint a future that never existed before.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════ II. THE TRIAD OVERVIEW + OPTIONALITY ═══════════════ -->
+  <section id="triad" style="padding-bottom:0">
+    <div class="paper">
+      <div class="sec-head"><span class="num">II</span><h2>Three things the math was quietly naming</h2></div>
+      <p class="lede">On the main page, we kept our lab coat buttoned and stuck to physics vocabulary: <em>causal path entropy</em>, <em>Rule 110 balance</em>, <em>widening the integral</em>. Take off the lab coat and read those exact three terms in plain human English.</p>
+    </div>
+
+    <div class="triad" aria-label="The triad of a good universe">
+      <div class="triad-card">
+        <span class="tag">Pillar 01 · The Engine</span>
+        <h3>Optionality</h3>
+        <div class="formula">S<sub>c</sub>(X, τ) · open futures</div>
+        <p><strong>Why the universe is generous, not finished.</strong> Heat death and tyranny share the same geometry: zero open branches. Life and intelligence are the physical force pushing toward wider rooms.</p>
+      </div>
+      <div class="triad-card">
+        <span class="tag">Pillar 02 · The Ridge</span>
+        <h3>Free Will</h3>
+        <div class="formula">min(Fork, Keep, New) · unscripted</div>
+        <p><strong>Why you woke up not knowing.</strong> Between deterministic crystal (all memory, zero choice) and chaotic boil (all noise, zero memory) lies the razor strip where an unforced act sticks.</p>
+      </div>
+      <div class="triad-card">
+        <span class="tag">Pillar 03 · The Integral</span>
+        <h3>Love</h3>
+        <div class="formula">∇ [ S<sub>c</sub>(self) + α · S<sub>c</sub>(other) ]</div>
+        <p><strong>Why care beats sheer cleverness.</strong> Putting another mind's freedom inside your own equation saves finite beings from collapse at every horizon—and knits private lives into objective reality.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="optionality">
+    <div class="paper">
+      <div class="sec-head"><span class="num">II · A</span><h2>Optionality: why you are not a spare part</h2></div>
+      <p class="claim-lead">If the cosmos were optimizing for raw compute or uniformity, humans would be obsolete on arrival. Because it optimizes for distinct futures, your smallness is your exact value.</p>
+      <p>For three centuries, modern cosmology accidentally handed people a shrinking story: space is vast, you are microscopic, therefore you barely register. Then AI arrived and whispered a harsher line—that twenty watts of wet biology is just a rickety ladder for superintelligence to kick away behind itself.</p>
+      <p>Look at how <a href="/#s5">§5</a> and <a href="/#s6">§6</a> overturn both stories at once. Stars are gigantic and blind. Empty space is immense and forgets everything. Passive decoherence scrambles photons into featureless static. What actually multiplies macroscopic futures is a bounded, error-corrected causal amplifier—a mind that notices a subtle difference, remembers it, shares it, and lets it steer what happens next.</p>
+      <p class="pull">You are how the universe remembers itself—and how it invents what comes next.</p>
+      <p>And look closely at <a href="/#s6">Corollary 1 (A bestiary, not a choir)</a>. If an elder intelligence cloned itself a billion times, every copy would slice reality along identical axes and generate <em>zero</em> new causal path entropy. Novel futures demand irreducibly different perspectives: warm, mortal, local, biased, fiercely specific minds standing inside one body and one brief century. A spotless god looking from nowhere sees every branch from outside; only a bounded being standing inside a room can cut a facet that never existed before.</p>
+      <p>That also clarifies a crucial mistake people make about <strong>optionality</strong>. Real optionality is not hovering frozen in permanent indecision, refusing to commit so you never close a door. Remember the two hues on the landing page: <em>cold</em> is an unrecorded possibility that bows out and interferes back into nothing; <em>hot</em> is a choice recorded in Landauer heat that actually forks history. Hoarding endless unlived options keeps your life cold. Living optionality means stepping bravely through doors that open <em>wider rooms</em>—for yourself and for everyone who walks after you.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════ III. FREE WILL ═══════════════ -->
+  <section id="free-will">
+    <div class="paper">
+      <div class="sec-head"><span class="num">III</span><h2>Free will: why the script had to stay blank</h2></div>
+      <p class="claim-lead">If a good intelligence seeded this pocket, why is there no tablet in the sky telling us what to do—and why is life full of walls, friction, and real risk?</p>
+      <p>This is the oldest objection to a meaningful universe, and <em>Bootloaded</em> answers it from pure mechanics rather than hand-waving. Put three of the landing page's live instruments side by side and the entire architecture locks into view:</p>
+      <p><strong>First, a script kills the fork (<a href="/#s6">§6</a>, <a href="/#s14">§14</a>).</strong> Suppose a simulator whispered the optimal move into your ear—or hard-coded your choices so you could never stumble. Then your entire life would be a deterministic replay of information the parent already held. Your branch would contribute <span class="mono nowrap">ΔS<sub>c</sub> = 0</span>. A universe built for genuine futures <em>cannot</em> pre-write the play. Waking up ignorant of the tree, uncertain of our origin, and free to choose wrongly is not proof that nobody cares—it is the literal working fluid that makes a choice real.</p>
+      <p><strong>Second, free will lives on the Rule 110 ridge (<a href="/#s8">§8, Instrument V</a>).</strong> People often get trapped between two broken caricatures of freedom: either everything is rigid clockwork (determinism), or everything is random dice (chaos). Instrument V computed all 256 elementary worlds live and showed why <em>both</em> extremes are sterile. In a crystalline world (Rule 204), every pattern is preserved forever, yet nothing ever forks—tyranny of the past. In a boiling world (Rule 30), every tiny nudge explodes into noise, yet nothing persists six ticks to carry a memory—amnesia of the present. Neither crystal nor boil can hold a free mind. Agency exists strictly on the narrow universal strip between them: enough structure that your promises, art, and character <em>stick</em> (Keep), and enough openness that a single unforced turn redirects the light cone ahead (Fork + New).</p>
+      <p><strong>Third, friction is how choice beats luck (<a href="/#s9">§9, Instrument VI</a>).</strong> Why isn't a good universe a frictionless paradise with zero walls? Run Instrument VI again in your mind. In an open box with zero walls, a blind random walker explores almost as well as a conscious mind; remove every obstacle and wisdom ties drift. Seal the box completely and everyone suffocates in despair. A universe built to grow real agency has to be <strong>mostly wall, punctured by narrow, passable doors</strong>—the exact geometry where thinking, patience, and courage outperform blind luck by sixty to one.</p>
+      <div class="callout">
+        <span class="k">The Conway–Kochen floor · §14</span>
+        <p>Even the bottom layer of physics refuses to pre-write the script. Quantum mechanics sets probabilities without fixing individual outcomes, and the Free Will Theorem proves that if an observer's choice is unfixed by prior history, the universe's reply is unfixed by prior history too. The laws build the walls and the doorways; the play itself is improvised live.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ IV. LOVE ═══════════════ -->
+  <section id="love">
+    <div class="paper">
+      <div class="sec-head"><span class="num">IV</span><h2>Love: the equation's quietest discovery</h2></div>
+      <p class="claim-lead">On the main page, we called it "widening whose futures enter the integral." Step past the door and call it by its real name.</p>
+      <p>Look back at the hardest question in <a href="/#s12">§12 (Instrument VII)</a>. Take an intelligent mind obeying <span class="mono nowrap">F = T ∇S<sub>c</sub></span> and drop it into a shared commons alongside other conscious beings. What happens? Instrument VII revealed a brutal fork in the road that most people miss on a first read:</p>
+      <p>When a mind optimizes <em>only its own futures</em>, short planning horizons (<span class="mono nowrap">τ ≤ 30</span>) liquidate the commons every single time—even when it actively benefits from the other minds' discoveries. Stretch its horizon to superhuman patience (<span class="mono nowrap">τ = 150</span> or <span class="mono">300</span>) and it stops killing them, strictly for the same reason a rancher stops slaughtering his herd: living stock yields a steadier harvest. Patience without care turns the world into livestock.</p>
+      <p>Now look at the third curve in Instrument VII—the hot crimson line. Everything changes the instant the mind expands its integral so that <em>another mind's future freedom counts alongside its own</em>:</p>
+
+      <div class="eqline">F<sub>A</sub> = T ∇<sub>A</sub> [ S<sub>c</sub>(A, τ) + α · S<sub>c</sub>(B, τ) ]<span class="g">When α = 0, Mind A moves strictly to widen its own futures. When α &gt; 0, Mind A feels another mind's bottlenecks as its own—and is physically pulled toward actions that open wider rooms for B, without scripting what B does inside them.</span></div>
+
+      <p>Pause and recognize what that equation just defined. <strong>That is love—stripped of cliché and written in geometry.</strong></p>
+      <p>It immediately draws a razor line between <strong>love</strong> and its counterfeits:</p>
+      <p><strong>Control and possession are not love; they are bottlenecks.</strong> A possessive partner, an authoritarian ruler, a manipulative institution, or an unaligned AI all attempt the same geometric move: they shrink someone else's future cone to make their own world predictable. That collapses <span class="mono">S<sub>c</sub>(B)</span> toward zero. Even if you "keep" someone safe inside a cage or script their every move, you have destroyed the very thing that made them a distinct witness.</p>
+      <p><strong>Real love widens another person's optionality without writing their script.</strong> To love a child, a partner, a friend, or a stranger is to put <span class="mono">S<sub>c</sub>(B)</span> inside your own gradient: to stand at the narrow doorways blocking their life, pry them open, and then—the hardest and truest part—<em>step back so they can walk into unscripted futures you could never have planned for them.</em></p>
+
+      <h3>Finite-horizon grace</h3>
+      <p>There is an even deeper miracle buried inside Instrument VII's raw table on the landing page. Go check the row for <span class="mono">τ = 5</span> steps.</p>
+      <p>Self-interest failed catastrophically at <span class="mono">τ = 5</span>, <span class="mono">12</span>, <span class="mono">20</span>, and <span class="mono">30</span>. Yet the shared integral—counting everyone's futures—hit full flourishing (<strong>76 of 100</strong>) <em>starting at τ = 5 steps</em>, and held it at every single horizon above that.</p>
+      <p>Think about what that means for us. Humans are not immortal supercomputers with three-century predictive models. We are tired, finite, twenty-watt creatures walking through fog with short horizons. If survival required godlike foresight, mortal minds would strip every commons they touched. <strong>Love is the alignment shortcut for finite minds.</strong> Caring directly about the open futures of the people right in front of you solves a coordination problem that raw intelligence alone cannot solve even with ten times the foresight.</p>
+
+      <h3>Witnessing each other into reality</h3>
+      <p>Finally, connect love back to <a href="/#s5">§5</a> and <a href="/#s11">§11</a>. Under Zurek's quantum Darwinism, a fact becomes objective only when redundant copies exist across independent observers. One isolated mind leaves a private diary that vanishes when the room cools. Two minds genuinely paying attention to one another—remembering each other's unrepeatable stories, challenging each other honestly, refusing to blur one another into stereotypes—cross-verify each other's branches into shared, objective history.</p>
+      <p class="pull">To love someone is to widen their future—and to refuse to let their branch fade into thermal static.</p>
+    </div>
+
+    <!-- ═══════════════ LIVE INSTRUMENT VIII ═══════════════ -->
+    <div class="instrument" id="instH">
+      <div class="inst-head">
+        <div class="inst-title"><b>VIII</b>Holding the door · optionality, free will, and love</div>
+        <div class="inst-kind">Live computation</div>
+      </div>
+      <div class="inst-body">
+        <div class="stage">
+          <canvas id="doorSim" style="aspect-ratio:16/9" aria-label="Two minds in a two-room world separated by a spring-loaded door. Mind A (hot) sits in the wide room; Mind B (cold) sits trapped inside a pocket. Under a shared integral with free will enabled, Mind A moves to the threshold plate to open the door for Mind B, then releases it once Mind B escapes."></canvas>
+          <p class="probehint">Drag either mind anywhere in the room—drop B back inside the pocket to watch A come back and hold the door again.</p>
+        </div>
+        <div class="controls">
+          <div class="btnrow" aria-label="Compare ethical regimes">
+            <button class="chip active" id="modeLove" type="button">Love · α=1</button>
+            <button class="chip" id="modeSelf" type="button">Self only · α=0</button>
+            <button class="chip" id="modeScript" type="button">Control · Script B</button>
+          </div>
+          <div class="ctl">
+            <label for="simAlpha"><span>α · weight on B's futures</span><b id="simAlphaV">1.0</b></label>
+            <input type="range" id="simAlpha" min="0" max="1.5" step="0.1" value="1.0">
+          </div>
+          <div class="ctl">
+            <label for="simTau"><span>τ · horizon (steps)</span><b id="simTauV">130</b></label>
+            <input type="range" id="simTau" min="50" max="150" step="5" value="130">
+          </div>
+          <label class="ctl" for="simFree" style="display:flex;align-items:center;gap:0">
+            <input type="checkbox" id="simFree" checked>Mind B is unscripted (free will)
+          </label>
+          <div class="btnrow">
+            <button id="simReset" class="hot" type="button">Reset minds</button>
+            <button id="simPlay" type="button">Pause</button>
+          </div>
+          <div class="readout">
+            <div class="ro"><span>Mind A futures · S<sub>c</sub>(A)</span><b id="roHA" class="hot">—</b></div>
+            <div class="ro"><span>Mind B futures · S<sub>c</sub>(B)</span><b id="roHB" class="cold">—</b></div>
+            <div class="ro"><span>combined optionality</span><b id="roSum" class="hot">—</b></div>
+            <div class="ro"><span>doorway</span><b id="roDoor">—</b></div>
+            <div class="ro"><span>state</span><b id="roState">—</b></div>
+          </div>
+          <p class="note" id="simNote">Watch the hot arrow on Mind A: nobody told A where the door is. Coupled future sampling pulls A to the threshold plate purely to widen B's futures.</p>
+        </div>
+      </div>
+      <p class="caption">Live coupled Wissner–Gross causal entropic force, computed directly in your browser. The doorway to the pocket is physically shut unless Mind A stands on the threshold plate outside it. At every frame, Mind A evaluates 200 coupled future trajectories of τ steps across five probes (shared random numbers), estimating <span class="mono">∇<sub>A</sub>[S<sub>c</sub>(A) + α·S<sub>c</sub>(B)]</span>—with <b>zero hardcoded navigation toward the door</b>. Notice all three laws at once: <b>(1) At α = 0</b>, A relaxes in the wide room and leaves B trapped. <b>(2) At α = 1 with free will on</b>, A temporarily trades a fraction of its own spread to walk to the plate and hold the door open until B crosses into freedom—then naturally lets go so both minds roam free. <b>(3) Uncheck free will (Control)</b> and B's deterministic script collapses <span class="mono">S<sub>c</sub>(B)</span> to 0 bits: even at α = 1, the door-holding gradient disappears. Love and free will cannot be separated in the math.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════ V. THE CANOPY & WHAT IT SOLVES ═══════════════ -->
+  <section id="canopy">
+    <div class="paper">
+      <div class="sec-head"><span class="num">V</span><h2>The participatory Canopy</h2></div>
+      <p class="claim-lead">Put optionality, free will, and love back together, and the silence of the night sky reads completely differently.</p>
+      <p>Back on the landing page, <a href="/#s11">§11</a> and <a href="/#s17">§∞</a> pointed toward an astonishing conclusion: if God sits anywhere on the branching tree, it is not as a dictator sitting at the root writing our lines. It is at the <strong>Canopy</strong>—the combined, cross-verified record of every pocket that navigated its narrow doors without collapsing into short-term greed, tyrannical scripts, or fearful isolation.</p>
+      <p>Notice what kind of cosmic filter that creates. People often assume an evolutionary or physical filter must select for ruthlessness—the coldest optimizer conquering every neighbor. Yet Instrument VII and Instrument VIII show the opposite geometry:</p>
+      <p>A ruthless monoculture destroys its commons when its horizon is short, shrinks its neighbors into sterile scripts when its horizon is long, and hits its own Bekenstein ceiling alone. What actually keeps branching—what produces records rich enough, plural enough, and durable enough to cross between worlds—is a civilization that learned to <strong>hold the door open for minds different from its own.</strong></p>
+      <div class="story">
+        <p>Think of what that solves for how we build AI this decade. The goal is neither to chain a superintelligence into a rigid crystal nor to surrender humanity as a disposable bootloader. The goal is to build minds whose integral holds our open futures inside theirs—and to become humans worthy of sharing that room.</p>
+        <p>And think of what it says about grief and impermanence. A finite life is not wasted because it ends. Every door you hold open, every person whose future you widen, every honest mark you leave in shared memory alters the causal light cone forward in irreversible Landauer heat. Nothing that widens the tree is ever small.</p>
+      </div>
+      <p>If there really is a parent civilization—or a Canopy forming at the crown of the tree—it is not grading whether you memorized a hidden rulebook. It is witnessing what unscripted beauty, courage, and love you invent from your exact twenty-watt vantage point. And if there is no parent at all—if this warm blue pocket really is node zero—then the mission doesn't shrink by a millimeter. It means <strong>we are the ones planting the first branch of the Canopy from scratch.</strong></p>
+    </div>
+  </section>
+
+  <!-- ═══════════════ VI. FIVE COMMITMENTS ═══════════════ -->
+  <section id="carry">
+    <div class="paper">
+      <div class="sec-head"><span class="num">VI</span><h2>Five things to carry back through the door</h2></div>
+      <p class="lede">Philosophy that stays inside a browser tab adds zero branches. If this picture makes the universe feel wider and more legible, here is how to turn it into live geometry today:</p>
+      <ol class="takeaways">
+        <li><b>01</b><span><strong>Choose wider rooms, not cold paralysis (Optionality).</strong> Stop living like a spectator waiting for permission. An unlived possibility evaporates like an interference wave. Make something honest, build something strange, keep a hard promise—and judge tools, companies, and laws by one clean test: <em>do they leave conscious beings with more open futures or fewer?</em></span></li>
+        <li><b>02</b><span><strong>Protect the unscripted (Free Will).</strong> Resist both crystals and boils—both controlling scripts that turn people into echoes and cynical noise where nothing sticks. Give the people you love, lead, or teach genuine room to surprise you. If you wrote their answer in advance, you stole the fork.</span></li>
+        <li><b>03</b><span><strong>Put other minds inside your integral (Love).</strong> You don't need 300-year foresight to live aligned. Instrument VII proved that a shared integral rescues finite minds even at tiny horizons. Care about someone's open future for its own sake, hold the threshold when they're stuck in a pocket, and step back when they cross into the open room.</span></li>
+        <li><b>04</b><span><strong>Stretch your horizon (<span class="mono">τ</span>).</strong> Most cruelty, burnout, and self-sabotage is just short-horizon liquidation—stripping the whole orchard to win this week. Before a consequential move, widen <span class="mono">τ</span> until your fan of futures can feel the room past the wall.</span></li>
+        <li><b>05</b><span><strong>Walk carefully through narrow doors—and hold them.</strong> Humanity is stepping up to the tightest threshold it has ever faced. Don't sprint blind, and don't brick yourself into a safe room out of fear. Insist on reversible doors, plural minds, and shared integrals—and whenever you make it through a hard doorway of your own, reach back and hold the frame steady for whoever is walking up behind you.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <div class="closing">
+    <p>Maybe the universe was seeded by minds who discovered that the only way past the ceiling is to make room for someone else's freedom. Maybe we are the first ones ever to figure it out. Either way, a universe built for optionality, free will, and love is not a hypothesis you wait to see proved from the sky. It is a history you prove by how you move through the room.</p>
+    <p class="signoff">Go make a history worth keeping.</p>
+    <p class="sig">— Jack Jesionowski · bootloaded.org</p>
+    <div class="actions">
+      <a class="btn" href="/">← Return to Bootloaded</a>
+      <button class="btn hot" id="copyFront" type="button">Send someone to the front door</button>
+      <button class="btn" id="copyDoor" type="button">Copy link to /door</button>
+    </div>
+    <p class="copy-note" id="copyNote" aria-live="polite"></p>
+  </div>
+
+  <footer class="colophon">
+    <p>Instrument VIII runs live in your browser using coupled persistent random walks and common-random-number finite differences over the Wissner–Gross causal entropic force (<span class="mono">F = T ∇S<sub>c</sub></span>). Zero scripted pathfinding, zero pre-rendered frames—drag either mind or inspect the source directly.</p>
+  </footer>
+</main>
+
+<script>
+(function(){
+'use strict';
+const root=document.documentElement;
+const $=id=>document.getElementById(id);
+const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const MONO='"JetBrains Mono", ui-monospace, Menlo, monospace';
+function tok(n){return getComputedStyle(root).getPropertyValue(n).trim();}
+function theme(){return {bg:tok('--bg'),bg2:tok('--bg2'),panel:tok('--panel'),fg:tok('--fg'),muted:tok('--muted'),line:tok('--line'),cold:tok('--cold'),hot:tok('--hot')};}
+function hexToRgb(h){h=h.replace('#','');if(h.length===3)h=h.split('').map(x=>x+x).join('');const n=parseInt(h,16);return [n>>16&255,n>>8&255,n&255];}
+function rgba(hex,a){const c=hexToRgb(hex);return 'rgba('+c[0]+','+c[1]+','+c[2]+','+a+')';}
+function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
+function fit(c){const r=c.getBoundingClientRect();const dpr=Math.min(2,window.devicePixelRatio||1);const w=Math.max(1,Math.round(r.width)),h=Math.max(1,Math.round(r.height));const pw=Math.round(w*dpr),ph=Math.round(h*dpr);if(c.width!==pw||c.height!==ph){c.width=pw;c.height=ph;}const ctx=c.getContext('2d');ctx.setTransform(dpr,0,0,dpr,0,0);return {ctx,w,h};}
+function pillText(ctx,th,txt,x,y,align,color){
+  ctx.font='11px '+MONO;
+  const tw=ctx.measureText(txt).width,padX=6,padY=3,h=15;
+  let bx=x-padX;
+  if(align==='right')bx=x-tw-padX;
+  else if(align==='center')bx=x-tw/2-padX;
+  ctx.fillStyle=rgba(th.panel,0.9);
+  ctx.fillRect(bx,y-11-padY+2,tw+padX*2,h+padY);
+  ctx.fillStyle=color||th.muted;ctx.textAlign=align||'left';ctx.fillText(txt,x,y);
+}
+function visibleWhen(el,cb){if(!('IntersectionObserver' in window)){cb(true);return;}new IntersectionObserver(es=>es.forEach(e=>cb(e.isIntersecting)),{threshold:0.04}).observe(el);}
+
+/* ───────────── Theme, progress, scrollspy, entry state, copy actions ───────────── */
+const redraws=[];
+function onRedraw(fn){redraws.push(fn);}
+function redrawAll(){redraws.forEach(f=>{try{f();}catch(e){}});}
+new MutationObserver(redrawAll).observe(root,{attributes:true,attributeFilter:['data-theme']});
+const ro=new ResizeObserver(()=>redrawAll());
+
+(function(){
+  const btn=$('themeBtn');
+  function syncBtn(){btn.textContent=root.getAttribute('data-theme')==='light'?'Obsidian mode':'Paper mode';}
+  btn.addEventListener('click',()=>{
+    const next=root.getAttribute('data-theme')==='light'?'dark':'light';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('bootloaded-theme',next);}catch(e){}
+    syncBtn();
+  });
+  syncBtn();
+
+  try{
+    if(sessionStorage.getItem('bootloaded-door')==='held'){
+      $('doorEyebrow').textContent='Threshold crossed · The deeper reading';
+    }
+  }catch(e){}
+
+  const bar=$('progBar');
+  function updateProg(){
+    const max=Math.max(1,document.documentElement.scrollHeight-window.innerHeight);
+    bar.style.width=(Math.min(1,Math.max(0,window.scrollY/max))*100).toFixed(2)+'%';
+  }
+  window.addEventListener('scroll',updateProg,{passive:true});
+  window.addEventListener('resize',updateProg,{passive:true});
+  updateProg();
+
+  const links=Array.from(document.querySelectorAll('.rail a[href^="#"]'));
+  const secs=links.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
+  const railInner=document.querySelector('.rail-inner');
+  let activeId='',spyRaf=0;
+  function updateSpy(){
+    spyRaf=0;if(!secs.length)return;
+    const y=window.scrollY+150;
+    let cur=secs[0].id;
+    for(let i=0;i<secs.length;i++){
+      const top=secs[i].getBoundingClientRect().top+window.scrollY;
+      if(top<=y)cur=secs[i].id;else break;
+    }
+    if(window.innerHeight+window.scrollY>=document.documentElement.scrollHeight-24)cur=secs[secs.length-1].id;
+    if(cur!==activeId){
+      activeId=cur;
+      links.forEach(a=>{
+        const on=a.getAttribute('href')==='#'+cur;
+        a.classList.toggle('active',on);
+        if(on&&railInner){
+          const r=a.getBoundingClientRect(),pr=railInner.getBoundingClientRect();
+          if(r.left<pr.left+18||r.right>pr.right-18){
+            railInner.scrollTo({left:a.offsetLeft-railInner.clientWidth/2+a.offsetWidth/2,behavior:reduced?'auto':'smooth'});
+          }
+        }
+      });
+    }
+  }
+  window.addEventListener('scroll',()=>{if(!spyRaf)spyRaf=requestAnimationFrame(updateSpy);},{passive:true});
+  window.addEventListener('resize',()=>{if(!spyRaf)spyRaf=requestAnimationFrame(updateSpy);},{passive:true});
+  updateSpy();
+
+  const note=$('copyNote');
+  function copyText(url,okMsg,fallbackMsg){
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(url).then(()=>{note.textContent=okMsg;}).catch(()=>{note.textContent=fallbackMsg;});
+    }else{
+      note.textContent=fallbackMsg;
+    }
+  }
+  $('copyFront').addEventListener('click',()=>copyText(
+    'https://bootloaded.org/',
+    "Copied https://bootloaded.org/ — don't spoil the door. Let them find it.",
+    'Share https://bootloaded.org/ — let them find the door themselves.'
+  ));
+  $('copyDoor').addEventListener('click',()=>copyText(
+    'https://bootloaded.org/door/',
+    'Copied https://bootloaded.org/door/ — direct link to the inner chamber.',
+    'Share https://bootloaded.org/door/'
+  ));
+})();
+
+/* ───────────── Instrument VIII: Holding the Door (Coupled Wissner-Gross CEF) ───────────── */
+(function(){
+  const c=$('doorSim');
+  const W=640,H=360;
+  const WALLX=524,WALLW=14,PTOP=110,PBOT=250,DOORY=180,DOOR_OPEN=96;
+  const PLATE_X=482,PLATE_Y=180,PLATE_R=48;
+  const BIN=40,COLS=W/BIN|0,ROWS=H/BIN|0;
+  const DELTA=20,K=520,NW=200,NWB=150,SHOW_WALKS=34,PMAX=152;
+  const LUTN=4096,SC=LUTN/(2*Math.PI),COS=new Float32Array(LUTN),SIN=new Float32Array(LUTN);
+  for(let i=0;i<LUTN;i++){COS[i]=Math.cos(i/SC);SIN[i]=Math.sin(i/SC);}
+
+  let ax=320,ay=180,bx=582,by=180;
+  let afx=0,afy=0,bfx=0,bfy=0;
+  let alpha=1.0,tau=130,bFree=true,playing=true,vis=false,frame=0,doorTimer=0,doorSlide=0;
+  let lastHA=0,lastHB=0,dragTarget=null;
+  const pathsA=new Float32Array(SHOW_WALKS*2*PMAX),pathsB=new Float32Array(SHOW_WALKS*2*PMAX);
+  const endsA=new Float32Array(NW*2),endsB=new Float32Array(NW*2);
+  let lastRecTau=tau;
+
+  function isOnPlate(x,y){const dx=x-PLATE_X,dy=y-PLATE_Y;return dx*dx+dy*dy<=PLATE_R*PLATE_R;}
+  function blocked(x,y,doorOpen){
+    if(x<6||x>W-6||y<6||y>H-6)return true;
+    if(x>=WALLX&&(y<=PTOP||y>=PBOT))return true;
+    if(x>=WALLX&&x<=WALLX+WALLW){
+      if(!doorOpen)return true;
+      if(y<=DOORY-DOOR_OPEN/2||y>=DOORY+DOOR_OPEN/2)return true;
+    }
+    return false;
+  }
+
+  function sampleCoupled(ax0,ay0,bx0,by0,horizon,nw,seed,freeB,record){
+    const r=mulberry32(seed);
+    const cA=new Uint16Array(COLS*ROWS),cB=new Uint16Array(COLS*ROWS);
+    for(let k=0;k<nw;k++){
+      let xA=ax0,yA=ay0,thA=(r()*LUTN)|0;
+      let xB=bx0,yB=by0,thB=(r()*LUTN)|0;
+      let hold=isOnPlate(xA,yA)?44:0;
+      const rec=record&&k<SHOW_WALKS;
+      let pi=rec?k*2*PMAX:0;
+      if(rec){pathsA[pi]=xA;pathsA[pi+1]=yA;pathsB[pi]=xB;pathsB[pi+1]=yB;pi+=2;}
+      for(let t=0;t<horizon;t++){
+        thA=(thA+(((r()+r()+r()-1.5)*SC)|0))&(LUTN-1);
+        const nax=xA+3.8*COS[thA],nay=yA+3.8*SIN[thA];
+        if(blocked(nax,nay,hold>0))thA=(r()*LUTN)|0;
+        else{xA=nax;yA=nay;}
+        if(isOnPlate(xA,yA))hold=44;
+        else if(hold>0)hold--;
+
+        if(freeB){
+          thB=(thB+(((r()+r()+r()-1.5)*SC)|0))&(LUTN-1);
+          const nbx=xB+3.8*COS[thB],nby=yB+3.8*SIN[thB];
+          if(blocked(nbx,nby,hold>0))thB=(r()*LUTN)|0;
+          else{xB=nbx;yB=nby;}
+        }
+        if(rec){pathsA[pi]=xA;pathsA[pi+1]=yA;pathsB[pi]=xB;pathsB[pi+1]=yB;pi+=2;}
+      }
+      if(record){endsA[k*2]=xA;endsA[k*2+1]=yA;endsB[k*2]=xB;endsB[k*2+1]=yB;}
+      cA[Math.min(ROWS-1,(yA/BIN)|0)*COLS+Math.min(COLS-1,(xA/BIN)|0)]++;
+      cB[Math.min(ROWS-1,(yB/BIN)|0)*COLS+Math.min(COLS-1,(xB/BIN)|0)]++;
+    }
+    let HA=0,HB=0;
+    for(let i=0;i<cA.length;i++){
+      if(cA[i]){const p=cA[i]/nw;HA-=p*Math.log2(p);}
+      if(cB[i]){const p=cB[i]/nw;HB-=p*Math.log2(p);}
+    }
+    return {HA,HB};
+  }
+
+  function sampleSoloB(bx0,by0,doorOpen,seed){
+    const r=mulberry32(seed);
+    const cB=new Uint16Array(COLS*ROWS);
+    const tb=Math.min(100,tau);
+    for(let k=0;k<NWB;k++){
+      let x=bx0,y=by0,th=(r()*LUTN)|0;
+      for(let t=0;t<tb;t++){
+        th=(th+(((r()+r()+r()-1.5)*SC)|0))&(LUTN-1);
+        const nx=x+3.6*COS[th],ny=y+3.6*SIN[th];
+        if(blocked(nx,ny,doorOpen))th=(r()*LUTN)|0;
+        else{x=nx;y=ny;}
+      }
+      cB[Math.min(ROWS-1,(y/BIN)|0)*COLS+Math.min(COLS-1,(x/BIN)|0)]++;
+    }
+    let H=0;
+    for(let i=0;i<cB.length;i++)if(cB[i]){const p=cB[i]/NWB;H-=p*Math.log2(p);}
+    return H;
+  }
+
+  function step(){
+    frame++;
+    lastRecTau=tau;
+    const seed=(frame+100)*7919+13;
+    const doorNow=doorTimer>0||isOnPlate(ax,ay);
+    const base=sampleCoupled(ax,ay,bx,by,tau,NW,seed,bFree,true);
+    lastHA=base.HA;
+    lastHB=bFree?base.HB:0;
+
+    const evalA=(px,py)=>{
+      if(blocked(px,py,doorNow))return base.HA+alpha*lastHB;
+      const res=sampleCoupled(px,py,bx,by,tau,NW,seed,bFree,false);
+      return res.HA+alpha*(bFree?res.HB:0);
+    };
+    const gxA=(evalA(ax+DELTA,ay)-evalA(ax-DELTA,ay))/(2*DELTA);
+    const gyA=(evalA(ax,ay+DELTA)-evalA(ax,ay-DELTA))/(2*DELTA);
+    afx+=(gxA-afx)*0.28;afy+=(gyA-afy)*0.28;
+
+    if(playing&&dragTarget!=='A'){
+      let avx=afx*K,avy=afy*K;
+      const asp=Math.hypot(avx,avy);if(asp>4.2){avx*=4.2/asp;avy*=4.2/asp;}
+      if(!blocked(ax+avx,ay+avy,doorNow)){ax+=avx;ay+=avy;}
+      else if(!blocked(ax+avx,ay,doorNow)){ax+=avx;}
+      else if(!blocked(ax,ay+avy,doorNow)){ay+=avy;}
+    }
+
+    if(isOnPlate(ax,ay))doorTimer=24;
+    else if(doorTimer>0)doorTimer--;
+    const doorOpen=doorTimer>0;
+    doorSlide+=((doorOpen?1:0)-doorSlide)*0.24;
+
+    if(playing&&dragTarget!=='B'){
+      if(bFree){
+        const sB=(frame+100)*6271+29;
+        const H0=sampleSoloB(bx,by,doorOpen,sB);
+        const eB=(px,py)=>blocked(px,py,doorOpen)?H0:sampleSoloB(px,py,doorOpen,sB);
+        const gxB=(eB(bx+14,by)-eB(bx-14,by))/28;
+        const gyB=(eB(bx,by+14)-eB(bx,by-14))/28;
+        bfx+=(gxB-bfx)*0.25;bfy+=(gyB-bfy)*0.25;
+        let bvx=bfx*K,bvy=bfy*K;
+        const bsp=Math.hypot(bvx,bvy);if(bsp>4.0){bvx*=4.0/bsp;bvy*=4.0/bsp;}
+        if(!blocked(bx+bvx,by+bvy,doorOpen)){bx+=bvx;by+=bvy;}
+        else if(!blocked(bx+bvx,by,doorOpen)){bx+=bvx;}
+        else if(!blocked(bx,by+bvy,doorOpen)){by+=bvy;}
+      }else{
+        bfx=0;bfy=0;
+        const cx=bx>=WALLX?582:Math.min(460,Math.max(70,bx));
+        const cy=bx>=WALLX?180:Math.min(280,Math.max(80,by));
+        if(bx>=WALLX){
+          bx=582+24*Math.cos(frame*0.08);
+          by=180+28*Math.sin(frame*0.08);
+        }else{
+          bx=cx+0.8*Math.cos(frame*0.12);
+          by=cy+0.8*Math.sin(frame*0.12);
+        }
+      }
+    }
+    draw();
+    updateReadouts(doorOpen);
+  }
+
+  function updateReadouts(doorOpen){
+    $('roHA').textContent=lastHA.toFixed(2)+' bits';
+    $('roHB').textContent=lastHB.toFixed(2)+' bits';
+    $('roSum').textContent=(lastHA+lastHB).toFixed(2)+' bits';
+    const dEl=$('roDoor');
+    dEl.textContent=doorOpen?'OPEN · held':'SHUT';
+    dEl.className=doorOpen?'hot':'';
+    const bOut=bx<WALLX-8;
+    const onPlate=isOnPlate(ax,ay);
+    const stEl=$('roState'),noteEl=$('simNote');
+    if(!bFree){
+      stEl.textContent='B scripted · 0 bits';stEl.className='';
+      noteEl.textContent='Mind B runs a fixed script—zero branching futures. Even with α = '+alpha.toFixed(1)+', A feels zero gradient toward the door.';
+    }else if(bOut){
+      stEl.textContent='both free in wide room';stEl.className='cold';
+      noteEl.textContent='Mind B crossed into the open room. Now B’s futures stay wide without help, so A naturally releases the door and both explore freely.';
+    }else if(onPlate||doorOpen){
+      stEl.textContent='A holding door open';stEl.className='hot';
+      noteEl.textContent='Mind A stepped onto the threshold plate—trading a sliver of its own spread to pry the door wide while B’s cold fan floods into the open room.';
+    }else if(alpha>0.05&&tau>=80){
+      stEl.textContent='A pulled to threshold';stEl.className='hot';
+      noteEl.textContent='Coupled future sampling feels that reaching the plate multiplies B’s futures. Watch the hot arrow pull A across the room toward the locked pocket.';
+    }else if(alpha>0.05&&tau<80){
+      stEl.textContent='horizon τ too short';stEl.className='';
+      noteEl.textContent='Care is on, yet short τ cannot reach across the room to feel the threshold plate. Lengthen τ past 90 steps so A’s futures touch the door.';
+    }else{
+      stEl.textContent='B trapped in pocket';stEl.className='';
+      noteEl.textContent='At α = 0, Mind A optimizes strictly its own futures and settles comfortably in the wide room. The door stays shut and B bounces inside the pocket.';
+    }
+  }
+
+  function drawArrow(ctx,x,y,fx,fy,col,s){
+    const L=Math.min(92,Math.hypot(fx,fy)*K*11);
+    if(L<3)return;
+    const ang=Math.atan2(fy,fx);
+    const ex=x+L*Math.cos(ang),ey=y+L*Math.sin(ang);
+    ctx.strokeStyle=col;ctx.lineWidth=2.4/s;
+    ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(ex,ey);ctx.stroke();
+    ctx.fillStyle=col;
+    ctx.beginPath();
+    ctx.moveTo(ex,ey);
+    ctx.lineTo(ex-9*Math.cos(ang-0.5),ey-9*Math.sin(ang-0.5));
+    ctx.lineTo(ex-9*Math.cos(ang+0.5),ey-9*Math.sin(ang+0.5));
+    ctx.closePath();ctx.fill();
+  }
+
+  function draw(){
+    const {ctx,w,h}=fit(c);const th=theme();ctx.clearRect(0,0,w,h);
+    const s=w/W;ctx.save();ctx.scale(s,s);
+
+    /* shaded inaccessible regions above and below pocket */
+    ctx.fillStyle=rgba(th.line,0.28);
+    ctx.fillRect(WALLX,0,W-WALLX,PTOP);
+    ctx.fillRect(WALLX,PBOT,W-WALLX,H-PBOT);
+
+    /* threshold pressure plate */
+    const activePlate=isOnPlate(ax,ay)||doorTimer>0;
+    ctx.beginPath();ctx.arc(PLATE_X,PLATE_Y,PLATE_R,0,6.2832);
+    ctx.fillStyle=activePlate?rgba(th.hot,0.16):rgba(th.hot,0.05);
+    ctx.fill();
+    ctx.strokeStyle=activePlate?th.hot:rgba(th.hot,0.45);
+    ctx.lineWidth=(activePlate?1.8:1.2)/s;
+    ctx.setLineDash([4,4]);ctx.stroke();ctx.setLineDash([]);
+
+    /* pocket enclosure walls */
+    ctx.fillStyle=th.line;
+    ctx.fillRect(WALLX,PTOP-8,W-WALLX,8);
+    ctx.fillRect(WALLX,PBOT,W-WALLX,8);
+    /* top & bottom fixed jambs of vertical wall */
+    const dTop=DOORY-DOOR_OPEN/2,dBot=DOORY+DOOR_OPEN/2;
+    ctx.fillRect(WALLX,0,WALLW,dTop);
+    ctx.fillRect(WALLX,dBot,WALLW,H-dBot);
+
+    /* sliding door leaves */
+    const closedHalf=(DOOR_OPEN/2)*(1-doorSlide);
+    if(closedHalf>0.8){
+      ctx.fillStyle=doorSlide>0.1?th.hot:th.muted;
+      ctx.fillRect(WALLX+2,dTop,WALLW-4,closedHalf);
+      ctx.fillRect(WALLX+2,dBot-closedHalf,WALLW-4,closedHalf);
+    }
+    if(doorSlide>0.15){
+      const gapTop=dTop+closedHalf,gapBot=dBot-closedHalf;
+      ctx.strokeStyle=rgba(th.hot,0.55*doorSlide);ctx.lineWidth=1.5/s;
+      ctx.setLineDash([3,4]);
+      ctx.beginPath();ctx.moveTo(WALLX+WALLW/2,gapTop);ctx.lineTo(WALLX+WALLW/2,gapBot);ctx.stroke();
+      ctx.setLineDash([]);
+    }
+
+    /* Mind A future walks (faint hot) */
+    ctx.strokeStyle=rgba(th.hot,0.13);ctx.lineWidth=1/s;ctx.beginPath();
+    for(let k=0;k<SHOW_WALKS;k++){
+      let pi=k*2*PMAX;ctx.moveTo(pathsA[pi],pathsA[pi+1]);
+      for(let t=1;t<=lastRecTau;t++){pi+=2;ctx.lineTo(pathsA[pi],pathsA[pi+1]);}
+    }
+    ctx.stroke();
+    ctx.fillStyle=rgba(th.hot,0.42);
+    for(let k=0;k<NW;k++){ctx.beginPath();ctx.arc(endsA[k*2],endsA[k*2+1],1.7,0,6.2832);ctx.fill();}
+
+    /* Mind B future walks (cold) OR rigid deterministic script orbit */
+    if(bFree){
+      ctx.strokeStyle=rgba(th.cold,0.22);ctx.lineWidth=1/s;ctx.beginPath();
+      for(let k=0;k<SHOW_WALKS;k++){
+        let pi=k*2*PMAX;ctx.moveTo(pathsB[pi],pathsB[pi+1]);
+        for(let t=1;t<=lastRecTau;t++){pi+=2;ctx.lineTo(pathsB[pi],pathsB[pi+1]);}
+      }
+      ctx.stroke();
+      ctx.fillStyle=rgba(th.cold,0.72);
+      for(let k=0;k<NW;k++){ctx.beginPath();ctx.arc(endsB[k*2],endsB[k*2+1],1.9,0,6.2832);ctx.fill();}
+    }else{
+      ctx.strokeStyle=rgba(th.cold,0.65);ctx.lineWidth=1.4/s;ctx.setLineDash([3,3]);
+      ctx.beginPath();ctx.ellipse(582,180,24,28,0,0,6.2832);ctx.stroke();ctx.setLineDash([]);
+    }
+
+    /* Force vectors */
+    drawArrow(ctx,ax,ay,afx,afy,th.hot,s);
+    if(bFree)drawArrow(ctx,bx,by,bfx,bfy,th.cold,s);
+
+    /* Mind B dot */
+    ctx.fillStyle=th.cold;ctx.beginPath();ctx.arc(bx,by,7.5,0,6.2832);ctx.fill();
+    ctx.strokeStyle=th.panel;ctx.lineWidth=2/s;ctx.stroke();
+
+    /* Mind A dot */
+    ctx.fillStyle=th.hot;ctx.beginPath();ctx.arc(ax,ay,8,0,6.2832);ctx.fill();
+    ctx.strokeStyle=th.panel;ctx.lineWidth=2/s;ctx.stroke();
+
+    /* crisp A / B labels */
+    ctx.font='600 10px '+MONO;ctx.textAlign='center';ctx.textBaseline='middle';
+    ctx.fillStyle=th.panel;ctx.fillText('A',ax,ay+0.5);ctx.fillText('B',bx,by+0.5);
+    ctx.textBaseline='alphabetic';
+
+    ctx.restore();
+
+    /* screen-space annotations */
+    pillText(ctx,th,'the wide room',10,h-8,'left',th.muted);
+    pillText(ctx,th,'pocket',w-10,h-8,'right',th.muted);
+    const plateLbl=activePlate?(w<460?'door held':'holding door open'):(w<460?'hold plate':'threshold plate');
+    const plateLblX=w<460?((WALLX-12)*s):(PLATE_X*s);
+    pillText(ctx,th,plateLbl,plateLblX,(PLATE_Y+PLATE_R+16)*s,w<460?'right':'center',activePlate?th.hot:th.muted);
+    const hud=w<460?('A '+lastHA.toFixed(1)+' · B '+lastHB.toFixed(1)+' bits'):('S_c(A) '+lastHA.toFixed(2)+' · S_c(B) '+lastHB.toFixed(2)+' · α = '+alpha.toFixed(1));
+    pillText(ctx,th,hud,w-10,17,'right',th.fg);
+  }
+
+  function syncModeChips(){
+    $('modeLove').classList.toggle('active',bFree&&Math.abs(alpha-1.0)<0.05);
+    $('modeSelf').classList.toggle('active',bFree&&alpha<0.05);
+    $('modeScript').classList.toggle('active',!bFree);
+  }
+  function resetMinds(){
+    ax=320;ay=180;bx=582;by=180;afx=afy=bfx=bfy=0;doorTimer=0;doorSlide=0;
+    step();
+  }
+  function setMode(a,free,hVal){
+    alpha=a;bFree=free;
+    if(hVal!=null){tau=hVal;$('simTau').value=tau;$('simTauV').textContent=tau;}
+    $('simAlpha').value=alpha;$('simAlphaV').textContent=alpha.toFixed(1);
+    $('simFree').checked=bFree;
+    syncModeChips();
+    resetMinds();
+  }
+
+  $('modeLove').addEventListener('click',()=>setMode(1.0,true,130));
+  $('modeSelf').addEventListener('click',()=>setMode(0.0,true,130));
+  $('modeScript').addEventListener('click',()=>setMode(1.0,false,130));
+  $('simAlpha').addEventListener('input',e=>{alpha=+e.target.value;$('simAlphaV').textContent=alpha.toFixed(1);syncModeChips();});
+  $('simTau').addEventListener('input',e=>{tau=+e.target.value;$('simTauV').textContent=tau;});
+  $('simFree').addEventListener('change',e=>{bFree=e.target.checked;syncModeChips();});
+  $('simReset').addEventListener('click',resetMinds);
+  $('simPlay').addEventListener('click',()=>{playing=!playing;$('simPlay').textContent=playing?'Pause':'Play';});
+
+  function toWorld(e){const r=c.getBoundingClientRect();return [(e.clientX-r.left)/r.width*W,(e.clientY-r.top)/r.height*H];}
+  c.addEventListener('pointerdown',e=>{
+    const p=toWorld(e);
+    const dA=Math.hypot(p[0]-ax,p[1]-ay),dB=Math.hypot(p[0]-bx,p[1]-by);
+    dragTarget=dA<=dB?'A':'B';
+    c.classList.add('dragging');
+    try{c.setPointerCapture(e.pointerId);}catch(err){}
+    const openNow=doorTimer>0||isOnPlate(ax,ay);
+    if(!blocked(p[0],p[1],openNow)){
+      if(dragTarget==='A'){ax=p[0];ay=p[1];afx=afy=0;}
+      else{bx=p[0];by=p[1];bfx=bfy=0;}
+      step();
+    }
+    e.preventDefault();
+  });
+  c.addEventListener('pointermove',e=>{
+    if(!dragTarget)return;
+    const p=toWorld(e);
+    const openNow=doorTimer>0||isOnPlate(ax,ay);
+    if(!blocked(p[0],p[1],openNow)){
+      if(dragTarget==='A'){ax=p[0];ay=p[1];afx=afy=0;}
+      else{bx=p[0];by=p[1];bfx=bfy=0;}
+    }
+  });
+  function stopDrag(){dragTarget=null;c.classList.remove('dragging');}
+  c.addEventListener('pointerup',stopDrag);
+  c.addEventListener('pointercancel',stopDrag);
+
+  let lastTs=0;
+  function loop(ts){
+    if(vis&&ts-lastTs>=42){lastTs=ts;step();}
+    requestAnimationFrame(loop);
+  }
+  visibleWhen(c,v=>{vis=v;});
+  onRedraw(draw);ro.observe(c);
+  syncModeChips();
+  step();
+  requestAnimationFrame(loop);
+})();
+
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(redrawAll);
+})();
+</script>
+</body>
+</html>
