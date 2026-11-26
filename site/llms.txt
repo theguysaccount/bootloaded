@@ -1,0 +1,8 @@
+# Bootloaded
+
+> Monograph, fable, and interactive instruments exploring the bootloading argument: if biological civilizations bootstrap superintelligence, what that implies about our own origins.
+
+## Pages
+
+- [Home](https://bootloaded.org/): Main monograph and interactive instruments.
+- [Beyond the Door](https://bootloaded.org/door/): Companion narrative chapter.
